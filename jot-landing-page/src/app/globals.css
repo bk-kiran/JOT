@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: dark;
+}
+
+:root {
+  --background: 220 20% 4%;
+  --card: 220 18% 8%;
+  --border: 220 18% 14%;
+  --muted: 220 15% 55%;
+  --primary: 200 100% 55%;
+  --primary-glow: 200 100% 55% / 0.3;
+  --gradient-start: hsl(200, 100%, 60%);
+  --gradient-end: hsl(180, 100%, 50%);
+}
+
+body {
+  background: hsl(var(--background));
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ── Gradient text ── */
+.text-gradient {
+  background: linear-gradient(135deg, hsl(200, 100%, 60%), hsl(180, 100%, 50%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Card glow (static) ── */
+.card-glow {
+  box-shadow: 0 0 40px -10px hsl(200 100% 55% / 0.3);
+  border: 1px solid hsl(200 100% 55% / 0.2);
+}
+
+/* ── Card glow (hover) ── */
+.card-glow-hover {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-glow-hover:hover {
+  box-shadow: 0 0 60px -10px hsl(200 100% 55% / 0.45);
+  border-color: hsl(200 100% 55% / 0.4);
+}
+
+/* ── Blinking cursor ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink {
+  animation: blink 500ms step-end infinite;
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: hsl(200, 100%, 55%);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+}
+
+/* ── Pulsing dot ── */
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 hsl(200 100% 55% / 0.4);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 0 4px hsl(200 100% 55% / 0);
+  }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease infinite;
+}
+
+/* ── Demo progress bar fill ── */
+@keyframes progress-fill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
