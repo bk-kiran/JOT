@@ -1,0 +1,14 @@
+{
+  "name": "jot",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:app": "cd jot-app && expo start",
+    "dev:convex": "npx convex dev"
+  },
+  "devDependencies": {
+    "@clerk/backend": "^3.2.2",
+    "convex": "^1.34.0",
+    "svix": "^1.89.0"
+  }
+}
