@@ -8,8 +8,13 @@
  * @module
  */
 
+import type * as actionLog from "../actionLog.js";
 import type * as crons from "../crons.js";
 import type * as http from "../http.js";
+import type * as ideas from "../ideas.js";
+import type * as lists from "../lists.js";
+import type * as notes from "../notes.js";
+import type * as reminders from "../reminders.js";
 import type * as users from "../users.js";
 
 import type {
@@ -19,8 +24,13 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  actionLog: typeof actionLog;
   crons: typeof crons;
   http: typeof http;
+  ideas: typeof ideas;
+  lists: typeof lists;
+  notes: typeof notes;
+  reminders: typeof reminders;
   users: typeof users;
 }>;
 

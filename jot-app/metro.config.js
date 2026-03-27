@@ -6,7 +6,7 @@ const repoRoot = path.resolve(__dirname, "..");
 
 const config = getDefaultConfig(projectRoot);
 
-// Watch the convex folder at repo root so Metro picks up generated files
+// Watch repo root so Metro can resolve @convex/* imports
 config.watchFolders = [repoRoot];
 
 // When resolving modules from outside jot-app/ (e.g. ../convex/_generated/),
